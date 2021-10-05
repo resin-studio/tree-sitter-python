@@ -1843,8 +1843,17 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "SYMBOL",
-            "name": "expression"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "expression"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "list_splat"
+              }
+            ]
           },
           {
             "type": "CHOICE",
@@ -1866,8 +1875,17 @@
                           "value": ","
                         },
                         {
-                          "type": "SYMBOL",
-                          "name": "expression"
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "SYMBOL",
+                              "name": "expression"
+                            },
+                            {
+                              "type": "SYMBOL",
+                              "name": "list_splat"
+                            }
+                          ]
                         }
                       ]
                     }

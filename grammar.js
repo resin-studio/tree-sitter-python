@@ -440,13 +440,13 @@ module.exports = grammar({
     ),
 
     expression_list: $ => prec.right(seq(
-      $.expression,
+      choice($.expression, $.list_splat),
       choice(
         ',',
         seq(
           repeat1(seq(
             ',',
-            $.expression
+            choice($.expression, $.list_splat)
           )),
           optional(',')
         ),
